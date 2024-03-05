@@ -1,0 +1,35 @@
+send:
+Telent 
+Set localecho
+Open mail.tongji.edu.cn 25
+(telenet mail.tongji.edu.cn 25)/linux
+220 mail.tongji.edu.cn
+HELO test.com
+250 Ok
+MAIL FROM:jintianqi@163.com
+250 Ok
+RCPT TO:jinweizu@mail.tongji.edu.cn
+250 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>Ok//回车.回车
+Subject:test mail
+
+This is a network test.
+.
+250 Ok
+QUIT
+221 Bye
+
+quit
+
+receive:
+Open mail.tongji.edu.cn 110
+(telenet mail.tongji.edu.cn 25)/linux
+220 mail.tongji.edu.cn
+USER student1
+250 Ok
+PASS tongji123
+250 Ok
+list
+250 Ok
+RETR 2   
